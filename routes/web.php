@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('crud111', 'crud111controller@index');
+Route::resource ('crud111', 'crud111controller');
