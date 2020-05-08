@@ -15,6 +15,12 @@ class CreateCrud111sTable extends Migration
     {
         Schema::create('crud111s', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone',20);
+            $table->text('address');
+            $table->enum('gender',['male', 'female', 'others']);
+            $table->enum('status',['active', 'inactive']);
             $table->timestamps();
         });
     }

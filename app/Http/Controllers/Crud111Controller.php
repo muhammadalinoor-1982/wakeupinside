@@ -14,7 +14,10 @@ class Crud111Controller extends Controller
      */
     public function index()
     {
-        return  view('crud111.list111');
+        $data['title'] = 'List Page';
+        $data['crud111s'] = Crud111::orderBy('id','desc')->get();
+        $data['serial'] = 1;
+        return  view('crud111.list111',$data);
     }
 
     /**
@@ -24,7 +27,8 @@ class Crud111Controller extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = 'Create New User';
+        return  view('crud111.create',$data);
     }
 
     /**
@@ -35,7 +39,17 @@ class Crud111Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'phone'=>'required',
+            'address'=>'required',
+            'gender'=>'required',
+            'status'=>'required'
+        ]);
+        Crud111::create($request->except('_token'));
+        session()->flash('message','User Created successfully');
+        return redirect()->route('crud111.index');
     }
 
     /**
@@ -57,7 +71,9 @@ class Crud111Controller extends Controller
      */
     public function edit(crud111 $crud111)
     {
-        //
+        $data['title'] = 'Edit User';
+        $data['crud111'] = $crud111;
+        return  view('crud111.edit',$data);
     }
 
     /**
@@ -69,7 +85,17 @@ class Crud111Controller extends Controller
      */
     public function update(Request $request, crud111 $crud111)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'phone'=>'required',
+            'address'=>'required',
+            'gender'=>'required',
+            'status'=>'required'
+        ]);
+        $crud111->update($request->except('_token'));
+        session()->flash('message','User Updated successfully');
+        return redirect()->route('crud111.index');
     }
 
     /**
@@ -80,6 +106,8 @@ class Crud111Controller extends Controller
      */
     public function destroy(crud111 $crud111)
     {
-        //
+        $crud111->delete();
+        session()->flash('message','User Deleted successfully');
+        return redirect()->route('crud111.index');
     }
 }
