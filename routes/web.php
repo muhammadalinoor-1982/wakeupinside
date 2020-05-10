@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::resource ('crud111', 'crud111controller');
+Route::resource ('crud222', 'crud222Controller');
