@@ -6,7 +6,7 @@
         @include('layout._form')
         <div class="form-group">
             <div class="col-sm-6">
-                <button class="btn btn-success">Create</button>
+                <button class="btn btn-sm btn-success">Create</button>
             </div>
         </div>
     </form>

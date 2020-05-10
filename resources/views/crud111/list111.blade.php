@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    <a href="{{route('crud111.create')}}" class="btn btn-primary">Add New</a>
+    <a href="{{route('crud111.create')}}" class="btn btn-sm btn-primary">Add New</a>
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -25,11 +25,11 @@
                 <td>{{ ucfirst($crud111->gender) }}</td>
                 <td>{{ ucfirst($crud111->status) }}</td>
                 <td>
-                    <a class="btn btn-success" href="{{ route('crud111.edit',$crud111->id) }}">Edit</a>
+                    <a class="btn btn-sm btn-success" href="{{ route('crud111.edit',$crud111->id) }}">Edit</a>
                     <form method="post" action="{{ route('crud111.destroy',$crud111->id) }}">
                         @csrf
                         @method('delete')
-                        <button class="btn btn-danger" onclick="return confirm('Are you confirm to delete this user')">Delete</button>
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Are you confirm to delete this user')">Delete</button>
                     </form>
                 </td>
             </tr>

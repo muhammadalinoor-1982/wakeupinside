@@ -15,7 +15,7 @@ class Crud222Controller extends Controller
     public function index()
     {
         $data['title'] = 'List Page';
-        $data['crud222s'] =crud222::orderBy('id','desc')->get();
+        $data['crud222s'] =crud222::withTrashed()->orderBy('id','desc')->get();
         $data['serial'] = 1;
         return view('crud222.index',$data);
     }
@@ -46,8 +46,11 @@ class Crud222Controller extends Controller
             'address'=>'required',
             'gender'=>'required',
             'status'=>'required',
+            'user_type'=>'required'
         ]);
-        crud222::create($request->except('_token'));
+        $crud222 = $request->except('_token');
+        $crud222['created_by'] = 1;
+        crud222::create($crud222);
         session()->flash('message','User Created successfully');
         return redirect()->route('crud222.index');
     }
@@ -92,8 +95,11 @@ class Crud222Controller extends Controller
             'address'=>'required',
             'gender'=>'required',
             'status'=>'required',
+            'user_type'=>'required'
         ]);
-        $crud222->update($request->except('_token'));
+        $crud222_data = $request->except('_token','_method');
+        $crud222_data['updated_by'] = 2;
+        $crud222->update($crud222_data);
         session()->flash('message','User Updated successfully');
         return redirect()->route('crud222.index');
     }
@@ -106,8 +112,23 @@ class Crud222Controller extends Controller
      */
     public function destroy(crud222 $crud222)
     {
-        $crud222->delete();
+        $crud222_delete['deleted_by'] = 3;
+        $crud222->delete($crud222_delete);
         session()->flash('message','User Deleted successfully');
+        return redirect()->route('crud222.index');
+    }
+    public function restore($id)
+    {
+        $crud222 = crud222::onlyTrashed()->findOrFail($id);
+        $crud222->restore();
+        session()->flash('message','User Restore successfully');
+        return redirect()->route('crud222.index');
+    }
+    public function delete($id)
+    {
+        $crud222 = crud222::onlyTrashed()->findOrFail($id);
+        $crud222->forceDelete();
+        session()->flash('message','User has been deleted permanently..!!!');
         return redirect()->route('crud222.index');
     }
 }
