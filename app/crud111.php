@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class crud111 extends Model
 {
+    use SoftDeletes;
     protected $fillable =[
         'name',
         'email',
@@ -13,5 +15,10 @@ class crud111 extends Model
         'address',
         'gender',
         'status',
+        'user_type',
+        'created_by',
+        'updated_by',
+        'deleted_by',
+        'image'
     ];
 }

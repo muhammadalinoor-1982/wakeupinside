@@ -1,6 +1,6 @@
 @extends('layout2.master')
 @section('content')
-    <form action="{{route('crud222.store')}}" method="post">
+    <form action="{{route('crud222.store')}}" method="post" enctype="multipart/form-data">
         @csrf
 @include('layout2._form')
         <div class="form-group">

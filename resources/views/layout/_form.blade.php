@@ -73,3 +73,34 @@
     <div class="pl-1 text-danger">{{ $message }}</div>
     @enderror
 </div>
+<div class="form-group">
+    <label class="col-md-6">User Type</label>
+    @php
+        if(old("user_type")){
+            $user_type = old('user_type');
+        }elseif(isset($crud111)){
+            $user_type = $crud111->user_type;
+        }else{
+            $user_type = null;
+        }
+    @endphp
+    <div class="col-md-6">
+        <input name="user_type" @if($user_type =='manager') checked @endif value="manager" type="radio" id="manager"> <label for="manager">Manager</label>
+        <input name="user_type" @if($user_type =='supervisor') checked @endif value="supervisor" type="radio" id="supervisor"> <label for="supervisor">Supervisor</label>
+        <input name="user_type" @if($user_type =='operator') checked @endif value="operator" type="radio" id="operator"> <label for="operator">Operator</label>
+    </div>
+    @error('user_type')
+    <div class="pl-1 text-danger">{{ $message }}</div>
+    @enderror
+</div>
+<div class="form-group">
+    <label class="col-md-6">Image</label>
+    <div class="col-md-6">
+        <img src="{{asset(isset($crud111->image)?$crud111->image:'images/users/no_image.png')}}" width="30%">
+        <input name="image" type="file" class="form-control form-control-line @error('image') is-invalid @enderror">
+    </div>
+    @error('image')
+    <div class="pl-1 text-danger">{{ $message }}</div>
+    @enderror
+</div>
+

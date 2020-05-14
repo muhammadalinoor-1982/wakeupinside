@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    <form action="{{route('crud111.update', $crud111->id)}}" method="post">
+    <form action="{{route('crud111.update', $crud111->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
         @include('layout._form')

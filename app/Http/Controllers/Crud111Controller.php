@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\crud111;
+use App\crud222;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class Crud111Controller extends Controller
 {
@@ -15,9 +17,9 @@ class Crud111Controller extends Controller
     public function index()
     {
         $data['title'] = 'List Page';
-        $data['crud111s'] = Crud111::orderBy('id','desc')->get();
+        $data['crud111s'] = Crud111::withTrashed()->orderBy('id','desc')->get();
         $data['serial'] = 1;
-        return  view('crud111.list111',$data);
+        return  view('crud111.index',$data);
     }
 
     /**
@@ -45,9 +47,20 @@ class Crud111Controller extends Controller
             'phone'=>'required',
             'address'=>'required',
             'gender'=>'required',
-            'status'=>'required'
+            'status'=>'required',
+            'user_type'=>'required',
+            'image'=>'image|required'
+
         ]);
-        Crud111::create($request->except('_token'));
+        $crud111 = $request->except('_token');
+        $crud111['created_by'] = 1;
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $file->move('images/users/',$file->getClientOriginalName());
+            $crud111['image'] = 'images/users/'.$file->getClientOriginalName();
+        }
+        Crud111::create($crud111);
         session()->flash('message','User Created successfully');
         return redirect()->route('crud111.index');
     }
@@ -91,9 +104,19 @@ class Crud111Controller extends Controller
             'phone'=>'required',
             'address'=>'required',
             'gender'=>'required',
-            'status'=>'required'
+            'status'=>'required',
+            'user_type'=>'required',
+            'image'=>'image|required'
         ]);
-        $crud111->update($request->except('_token'));
+        $crud111_data = $request->except('_token','_method');
+        $crud111_data['updated_by'] = 2;
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $file->move('images/users/',$file->getClientOriginalName());
+            File::delete($crud111->image);
+            $crud111_data['image'] = 'images/users/'.$file->getClientOriginalName();
+        }
+        $crud111->update($crud111_data);
         session()->flash('message','User Updated successfully');
         return redirect()->route('crud111.index');
     }
@@ -108,6 +131,21 @@ class Crud111Controller extends Controller
     {
         $crud111->delete();
         session()->flash('message','User Deleted successfully');
+        return redirect()->route('crud111.index');
+    }
+    public function restore($id)
+    {
+        $crud111 = crud111::onlyTrashed()->findOrFail($id);
+        $crud111->restore();
+        session()->flash('message','User restore successfully');
+        return redirect()->route('crud111.index');
+    }
+    public function delete($id)
+    {
+        $crud111 = crud111::onlyTrashed()->findOrFail($id);
+        File::delete($crud111->image);
+        $crud111->forceDelete();
+        session()->flash('message','User has been deleted permanently');
         return redirect()->route('crud111.index');
     }
 }
