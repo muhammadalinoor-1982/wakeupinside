@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\crud111;
-use App\crud222;
+use Carbon\Carbon;
+use Faker\Provider\DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -57,8 +58,9 @@ class Crud111Controller extends Controller
 
         if($request->hasFile('image')){
             $file = $request->file('image');
-            $file->move('images/users/',$file->getClientOriginalName());
-            $crud111['image'] = 'images/users/'.$file->getClientOriginalName();
+            $file_name = date('d.m.Y').'_'.time().'_'.rand(0000,9999).'_'.'L3T_'.$file->getClientOriginalName();
+            $file->move('images/users/',$file_name);
+            $crud111['image'] = 'images/users/'.$file_name;
         }
         Crud111::create($crud111);
         session()->flash('message','User Created successfully');
@@ -112,9 +114,10 @@ class Crud111Controller extends Controller
         $crud111_data['updated_by'] = 2;
         if($request->hasFile('image')){
             $file = $request->file('image');
-            $file->move('images/users/',$file->getClientOriginalName());
+            $file_name = date('d.m.Y').'_'.time().'_'.rand(0000,9999).'_'.'L3T_'.$file->getClientOriginalName();
+            $file->move('images/users/',$file_name);
             File::delete($crud111->image);
-            $crud111_data['image'] = 'images/users/'.$file->getClientOriginalName();
+            $crud111_data['image'] = 'images/users/'.$file_name;
         }
         $crud111->update($crud111_data);
         session()->flash('message','User Updated successfully');

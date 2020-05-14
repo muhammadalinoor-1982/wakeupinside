@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\crud222;
+use Faker\Provider\DateTime;
 use Illuminate\Http\Request;
 
 class Crud222Controller extends Controller
