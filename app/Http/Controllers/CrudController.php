@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\crud111;
+use App\crud;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class Crud111Controller extends Controller
+class CrudController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class Crud111Controller extends Controller
     public function index()
     {
         $data['title'] = 'List Page';
-        $data['crud111s'] = Crud111::withTrashed()->orderBy('id','desc')->get();
+        $data['cruds'] = Crud::withTrashed()->orderBy('id','desc')->get();
         $data['serial'] = 1;
-        return  view('crud111.index',$data);
+        return  view('basic.crud.index',$data);
     }
 
     /**
@@ -29,7 +29,7 @@ class Crud111Controller extends Controller
     public function create()
     {
         $data['title'] = 'Create New User';
-        return  view('crud111.create',$data);
+        return  view('basic.crud.create',$data);
     }
 
     /**
@@ -42,7 +42,7 @@ class Crud111Controller extends Controller
     {
         $request->validate([
             'name'=>'required',
-            'email'=>'required|unique:crud111s|email',
+            'email'=>'required|unique:cruds|email',
             'phone'=>'required',
             'address'=>'required',
             'gender'=>'required',
@@ -52,28 +52,28 @@ class Crud111Controller extends Controller
             'password'=>'required|confirmed'
 
         ]);
-        $crud111 = $request->except('_token','password');
-        $crud111['password'] = bcrypt($request->password);
-        $crud111['created_by'] = 1;
+        $crud = $request->except('_token','password');
+        $crud['password'] = bcrypt($request->password);
+        $crud['created_by'] = 1;
 
         if($request->hasFile('image')){
             $file = $request->file('image');
             $file_name = date('d.m.Y').'_'.time().'_'.rand(0000,9999).'_'.'L3T_'.$file->getClientOriginalName();
-            $file->move('images/users/',$file_name);
-            $crud111['image'] = 'images/users/'.$file_name;
+            $file->move('images/crud/',$file_name);
+            $crud['image'] = 'images/crud/'.$file_name;
         }
-        Crud111::create($crud111);
+        Crud::create($crud);
         session()->flash('message','User Created successfully');
-        return redirect()->route('crud111.index');
+        return redirect()->route('crud.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\crud111  $crud111
+     * @param  \App\crud  $crud
      * @return \Illuminate\Http\Response
      */
-    public function show(crud111 $crud111)
+    public function show(crud $crud)
     {
         //
     }
@@ -81,34 +81,28 @@ class Crud111Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\crud111  $crud111
+     * @param  \App\crud  $crud
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $data['title'] = 'Edit User';
-        $data['crud111'] = crud111::findOrFail($id);
-        return  view('crud111.edit',$data);
+        $data['crud'] = crud::findOrFail($id);
+        return  view('basic.crud.edit',$data);
     }
-    /*public function edit(crud111 $crud111)
-        {
-            $data['title'] = 'Edit User';
-            $data['crud111'] = $crud111;
-            return  view('crud111.edit',$data);
-        }*/
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\crud111  $crud111
+     * @param  \App\crud  $crud
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, crud111 $crud111)
+    public function update(Request $request, crud $crud)
     {
         $request->validate([
             'name'=>'required',
-            'email'=>'sometimes|required|email|unique:crud111s,email,'.$crud111->id,
+            'email'=>'sometimes|required|email|unique:cruds,email,'.$crud->id,
             'phone'=>'required',
             'address'=>'required',
             'gender'=>'required',
@@ -117,60 +111,51 @@ class Crud111Controller extends Controller
             'image'=>'image',
             'password'=>'confirmed'
         ]);
-        $crud111_data = $request->except('_token','_method','password');
-        $crud111_data['updated_by'] = 2;
+        $crud_data = $request->except('_token','_method','password');
+        $crud_data['updated_by'] = 2;
 
         if($request->has('password'))
         {
-        $crud111_data['password'] = bcrypt($request->password);
+            $crud_data['password'] = bcrypt($request->password);
         }
 
         if($request->hasFile('image')){
             $file = $request->file('image');
             $file_name = date('d.m.Y').'_'.time().'_'.rand(0000,9999).'_'.'L3T_'.$file->getClientOriginalName();
-            $file->move('images/users/',$file_name);
-            File::delete($crud111->image);
-            $crud111_data['image'] = 'images/users/'.$file_name;
+            $file->move('images/crud/',$file_name);
+            File::delete($crud->image);
+            $crud_data['image'] = 'images/crud/'.$file_name;
         }
-        $crud111->update($crud111_data);
+        $crud->update($crud_data);
         session()->flash('message','User Updated successfully');
-        return redirect()->route('crud111.index');
+        return redirect()->route('crud.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\crud111  $crud111
+     * @param  \App\crud  $crud
      * @return \Illuminate\Http\Response
      */
-    public function destroy(crud111 $crud111)
+    public function destroy(crud $crud)
     {
-        $crud111->delete();
+        $crud->delete();
         session()->flash('message','User Deleted successfully');
-        return redirect()->route('crud111.index');
+        return redirect()->route('crud.index');
     }
-
-   /* public function delete_by($id)
-    {
-        if($request->deleted_at != null){
-            $crud['deleted_by'] = 3;
-        }
-        Crud111::create($crud);
-    }*/
-
     public function restore($id)
     {
-        $crud111 = crud111::onlyTrashed()->findOrFail($id);
-        $crud111->restore();
+        $crud = crud::onlyTrashed()->findOrFail($id);
+        $crud->restore();
         session()->flash('message','User restore successfully');
-        return redirect()->route('crud111.index');
+        return redirect()->route('crud.index');
     }
     public function delete($id)
     {
-        $crud111 = crud111::onlyTrashed()->findOrFail($id);
-        File::delete($crud111->image);
-        $crud111->forceDelete();
+        $crud = crud::onlyTrashed()->findOrFail($id);
+        File::delete($crud->image);
+        $crud->forceDelete();
         session()->flash('message','User has been deleted permanently');
-        return redirect()->route('crud111.index');
+        return redirect()->route('crud.index');
     }
 }

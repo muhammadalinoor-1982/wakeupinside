@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="953c0ea4-8da5-4628-a4d9-ca56aa6da481" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/users/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/users/14.05.2020_1589431265_1852_L3T_img-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/users/14.05.2020_1589431359_1060_L3T_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/users/2020_1589427390_5597_L3T_img-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/users/2020_1589427484_9450_L3T_img-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/users/img-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/users/img-12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/users/img-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/users/img-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/users/img-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/crud/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/basic/crud/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/basic/crud/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/basic/crud/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/basic/layout_crud/_form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/basic/layout_crud/_message.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/basic/layout_crud/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Crud111Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Crud111Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Crud222Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Crud222Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/users/12f532a7b653718df36e9c0770bb62ec.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud111.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud111.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_29_034801_create_crud111s_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_29_034801_create_crud111s_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,77 +29,94 @@
     <session id="-1846482860">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.35" value="1" />
-          <entry key="project.open.time.41" value="2" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.41" value="3" />
           <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.48" value="4" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.86" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="env" value="3" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="3" />
           <entry key="json" value="1" />
-          <entry key="php" value="129" />
+          <entry key="php" value="211" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="72" />
+          <entry key="Blade" value="129" />
           <entry key="JSON" value="1" />
-          <entry key="PHP" value="57" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="PHP" value="82" />
+          <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="15" />
-          <entry key="php" value="5363" />
+          <entry key="gitignore" value="1" />
+          <entry key="php" value="6631" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="2575" />
-          <entry key="PHP" value="2788" />
-          <entry key="PLAIN_TEXT" value="15" />
+          <entry key="Blade" value="2829" />
+          <entry key="PHP" value="3802" />
+          <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Crud111Controller.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CrudController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+            <state relative-caret-position="995">
+              <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
               <folding>
-                <element signature="e#40#56#0#PHP" expanded="true" />
+                <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/basic/crud/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/images/users/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/resources/views/basic/crud/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Crud222Controller.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/crud111/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1967">
-              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="28" />
+            <state relative-caret-position="204">
+              <caret line="12" column="11" selection-end-line="12" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -117,9 +133,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>111</find>
+      <find>crud111</find>
     </findStrings>
     <replaceStrings>
       <replace>222</replace>
+      <replace>crud</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -131,7 +149,6 @@
         <option value="$PROJECT_DIR$/resources/views/crud111.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_04_29_034801_create_crud111s_table.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/_message.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layout2/master.blade.php" />
@@ -142,19 +159,34 @@
         <option value="$PROJECT_DIR$/resources/views/crud222/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_05_11_021431_modify_crud111_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_05_11_022227_modify_crud111_table.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/crud111/list111.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/crud222/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/crud222/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/crud111/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/crud111/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_05_12_041707_modify_crud111_f_table.php" />
-        <option value="$PROJECT_DIR$/app/crud111.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_05_12_045321_modify_crud111_image_table.php" />
         <option value="$PROJECT_DIR$/resources/views/crud111/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout/_form.blade.php" />
+        <option value="$PROJECT_DIR$/public/images/users/.gitignore" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Crud222Controller.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_04_29_034801_create_crud111s_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_05_17_013045_modify_crud111_e_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_05_17_014333_create_test_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_05_17_015306_modify_crud111_pass_table.php" />
+        <option value="$PROJECT_DIR$/app/crud111.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/_form.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_05_18_010925_create_cruds_table.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/crud.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Crud111Controller.php" />
+        <option value="$PROJECT_DIR$/resources/views/basic/layout/_form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/basic/layout_crud/_message.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/basic/layout_crud/_form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/basic/crud/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/basic/layout_crud/master.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/basic/crud/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/basic/crud/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -336,6 +368,13 @@
               <item name="wakeupinside" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="crud" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wakeupinside" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wakeupinside" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -348,6 +387,29 @@
               <item name="wakeupinside" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wakeupinside" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wakeupinside" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="basic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wakeupinside" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wakeupinside" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="basic" type="462c0819:PsiDirectoryNode" />
+              <item name="crud" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wakeupinside" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wakeupinside" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="basic" type="462c0819:PsiDirectoryNode" />
+              <item name="layout_crud" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wakeupinside" type="b2602c69:ProjectViewProjectNode" />
@@ -383,6 +445,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\XAMPP-FOR-LARAVEL\htdocs\wakeupinside\public\images\crud" />
+      <recent name="F:\XAMPP-FOR-LARAVEL\htdocs\wakeupinside\resources\views\basic\layout" />
+      <recent name="F:\XAMPP-FOR-LARAVEL\htdocs\wakeupinside\public\images\users" />
       <recent name="F:\XAMPP-FOR-LARAVEL\htdocs\wakeupinside\resources\views\layout2" />
       <recent name="F:\XAMPP-FOR-LARAVEL\htdocs\wakeupinside" />
     </key>
@@ -427,18 +492,22 @@
       <workItem from="1589182400224" duration="1494000" />
       <workItem from="1589252441651" duration="4065000" />
       <workItem from="1589338944183" duration="6039000" />
-      <workItem from="1589423902342" duration="6363000" />
+      <workItem from="1589423902342" duration="6555000" />
+      <workItem from="1589678368244" duration="9288000" />
+      <workItem from="1589762986658" duration="8574000" />
+      <workItem from="1589772164360" duration="4541000" />
+      <workItem from="1589790372711" duration="2935000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84516000" />
+    <option name="totallyTimeSpent" value="110046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49751243" visible="true" weight="0.27987897" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49751243" visible="true" weight="0.295764" />
       <window_info id="Structure" order="1" sideWeight="0.50248754" side_tool="true" weight="0.26143292" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -451,7 +520,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32786885" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32131147" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -485,20 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/_message.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -545,20 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_11_022227_modify_crud111_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/crud222/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -580,28 +621,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/crud111/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_12_041707_modify_crud111_f_table.php" />
+    <entry file="file://$PROJECT_DIR$/public/images/users/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="88" selection-start-line="3" selection-start-column="88" selection-end-line="3" selection-end-column="88" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/crud111/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Crud222Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="103" selection-start-line="2" selection-start-column="103" selection-end-line="2" selection-end-column="103" />
+        <state relative-caret-position="141">
+          <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_17_013045_modify_crud111_e_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_17_014126_test.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_17_014333_create_test_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_17_015306_modify_crud111_pass_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_04_29_034801_create_crud111s_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="198">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_12_041707_modify_crud111_f_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_11_022227_modify_crud111_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_12_045321_modify_crud111_image_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -611,44 +669,151 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/crud111.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        <state relative-caret-position="287">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/_form.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/images/crud/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/basic/layout/_message.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/basic/layout/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_18_010925_create_cruds_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="98" column="92" selection-start-line="98" selection-start-column="92" selection-end-line="98" selection-end-column="92" />
+        <state relative-caret-position="128">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/crud111/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/crud.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="104" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="104" />
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Crud222Controller.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1967">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="28" />
+        <state relative-caret-position="287">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Crud111Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+        <state relative-caret-position="672">
+          <caret line="158" column="7" selection-start-line="158" selection-start-column="7" selection-end-line="158" selection-end-column="7" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/users/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/resources/views/basic/layout/_form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/crud111/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="28" column="48" selection-end-line="61" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/crud111/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="11" selection-start-line="1" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="20" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/_message.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/_form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="108" column="30" selection-end-line="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/basic/layout_crud/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/basic/crud/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/basic/layout_crud/_message.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/basic/layout_crud/_form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" column="57" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CrudController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="995">
+          <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/basic/crud/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/crud111/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/basic/crud/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
